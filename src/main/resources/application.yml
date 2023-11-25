@@ -1,0 +1,69 @@
+
+
+spring:
+  datasource:
+    username: man
+    password: manuk2000
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/picsart_intership?useSSL=false
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+
+
+  # Configuring JavaMail properties
+
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: asatryanmanuk2000@gmail.com
+    password: buqvtjjvjwxionzc
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+
+  ############
+  ## security
+  ############
+security:
+  #  oauth2:
+  #    client:
+  #      registration:
+  #        google:
+  #          client-id: 469159547989-ara8beo4hpa4275sp2gtimjvt19dho7e.apps.googleusercontent.com
+  #          client-secret: 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
+  access_token:
+    secret_key: 4125442A472D4B6150645367566B59703373357638792F423F4528482B4D6251
+    live: 1000000
+  refresh_token:
+    secret_key: 432A462D4A614E645267556B586E3272357538782F413F4428472B4B62506553
+    live: 100000
+
+#CONSTANTS
+constants:
+  domain: http://localhost:8080
+  token-prefix: "Bearer "
+  refresh-token-api: "/auth/token/refresh"
+  header-string: "Authorization"
+  email-activate-expiration-time: 100_000_000
+  email-activate-jwt-key: "4125442A472D4B6150645367566B59703373357638792F423F4528482B4D6251"
+
+logging:
+  level:
+    root: INFO
+
+
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+    tags-sorter: alpha
+    operations-sorter: alpha
+    doc-expansion: none

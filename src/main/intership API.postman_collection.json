@@ -1,0 +1,3038 @@
+{
+	"info": {
+		"_postman_id": "5bda98a0-ae7f-4d29-9145-651d24cf639b",
+		"name": "TMS API",
+		"description": "TMS API description",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28508015",
+		"_collection_link": "https://www.postman.com/warped-zodiac-582945/workspace/intership/collection/28508015-5bda98a0-ae7f-4d29-9145-651d24cf639b?action=share&source=collection_link&creator=28508015"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "v1",
+							"item": [
+								{
+									"name": "{userId}",
+									"item": [
+										{
+											"name": "Get User Profile",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/v1/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														"v1",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Retrieves the user profile based on the user ID."
+											},
+											"response": [
+												{
+													"name": "User profile retrieved successfully",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/users/v1/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"users",
+																"v1",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"ADMIN\",\n  \"password\": \"<string>\",\n  \"courses\": [\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    }\n  ],\n  \"dateJoined\": \"<date>\",\n  \"lastLogin\": \"<dateTime>\",\n  \"profilePicture\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"active\": \"<boolean>\"\n}"
+												},
+												{
+													"name": "User not found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/users/v1/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"users",
+																"v1",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Update User Profile",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"ADMIN\",\n  \"password\": \"<string>\",\n  \"courses\": [\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    }\n  ],\n  \"dateJoined\": \"<date>\",\n  \"lastLogin\": \"<dateTime>\",\n  \"profilePicture\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/v1/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														"v1",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Updates the user profile based on the user ID."
+											},
+											"response": [
+												{
+													"name": "User profile updated successfully",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"ADMIN\",\n  \"password\": \"<string>\",\n  \"courses\": [\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    }\n  ],\n  \"dateJoined\": \"<date>\",\n  \"lastLogin\": \"<dateTime>\",\n  \"profilePicture\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/users/v1/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"users",
+																"v1",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "User not found",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"ADMIN\",\n  \"password\": \"<string>\",\n  \"courses\": [\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    }\n  ],\n  \"dateJoined\": \"<date>\",\n  \"lastLogin\": \"<dateTime>\",\n  \"profilePicture\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/users/v1/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"users",
+																"v1",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Delete User",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/v1/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														"v1",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Deletes the user profile based on the user ID."
+											},
+											"response": [
+												{
+													"name": "User deleted successfully",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/users/v1/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"users",
+																"v1",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "User not found",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/users/v1/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"users",
+																"v1",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Create User",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"ADMIN\",\n  \"password\": \"<string>\",\n  \"courses\": [\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    }\n  ],\n  \"dateJoined\": \"<date>\",\n  \"lastLogin\": \"<dateTime>\",\n  \"profilePicture\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v1"
+											]
+										},
+										"description": "Creates a new user profile."
+									},
+									"response": [
+										{
+											"name": "User created successfully",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"ADMIN\",\n  \"password\": \"<string>\",\n  \"courses\": [\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    }\n  ],\n  \"dateJoined\": \"<date>\",\n  \"lastLogin\": \"<dateTime>\",\n  \"profilePicture\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														"v1"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"ADMIN\",\n  \"password\": \"<string>\",\n  \"courses\": [\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    }\n  ],\n  \"dateJoined\": \"<date>\",\n  \"lastLogin\": \"<dateTime>\",\n  \"profilePicture\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"active\": \"<boolean>\"\n}"
+										},
+										{
+											"name": "Bad request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"ADMIN\",\n  \"password\": \"<string>\",\n  \"courses\": [\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    }\n  ],\n  \"dateJoined\": \"<date>\",\n  \"lastLogin\": \"<dateTime>\",\n  \"profilePicture\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														"v1"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "courses",
+					"item": [
+						{
+							"name": "v1",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "Get Single Course",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/courses/v1/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"courses",
+														"v1",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Returns information about a specific course based on its identifier."
+											},
+											"response": [
+												{
+													"name": "Course information",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/courses/v1/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"courses",
+																"v1",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"teacher\": {\n    \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n  },\n  \"startDate\": \"<date>\",\n  \"credits\": \"<integer>\",\n  \"enrollmentLimit\": \"<integer>\",\n  \"status\": \"<string>\"\n}"
+												},
+												{
+													"name": "Course not found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/courses/v1/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"courses",
+																"v1",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"teacher\": {\n    \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n  },\n  \"startDate\": \"<date>\",\n  \"credits\": \"<integer>\",\n  \"enrollmentLimit\": \"<integer>\",\n  \"status\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Update Course",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"teacher\": {\n    \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n  },\n  \"startDate\": \"<date>\",\n  \"credits\": \"<integer>\",\n  \"enrollmentLimit\": \"<integer>\",\n  \"status\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/courses/v1/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"courses",
+														"v1",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Updates information about a specific course based on its identifier."
+											},
+											"response": [
+												{
+													"name": "Course information updated successfully",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"teacher\": {\n    \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n  },\n  \"startDate\": \"<date>\",\n  \"credits\": \"<integer>\",\n  \"enrollmentLimit\": \"<integer>\",\n  \"status\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/courses/v1/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"courses",
+																"v1",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Course not found",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"teacher\": {\n    \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n  },\n  \"startDate\": \"<date>\",\n  \"credits\": \"<integer>\",\n  \"enrollmentLimit\": \"<integer>\",\n  \"status\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/courses/v1/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"courses",
+																"v1",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Delete Course",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/courses/v1/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"courses",
+														"v1",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Deletes a specific course based on its identifier."
+											},
+											"response": [
+												{
+													"name": "Course deleted successfully",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/courses/v1/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"courses",
+																"v1",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Course not found",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/courses/v1/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"courses",
+																"v1",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "{courseId}",
+									"item": [
+										{
+											"name": "assignments",
+											"item": [
+												{
+													"name": "{id}",
+													"item": [
+														{
+															"name": "Update Assignment",
+															"request": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"dueDate\": \"<date>\",\n  \"course\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"teacher\": {\n      \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n    },\n    \"startDate\": \"<date>\",\n    \"credits\": \"<integer>\",\n    \"enrollmentLimit\": \"<integer>\",\n    \"status\": \"<string>\"\n  },\n  \"postedDate\": \"<date>\",\n  \"maxScore\": \"<integer>\",\n  \"submissionFormat\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/courses/v1/:courseId/assignments/:id",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"courses",
+																		"v1",
+																		":courseId",
+																		"assignments",
+																		":id"
+																	],
+																	"variable": [
+																		{
+																			"key": "courseId"
+																		},
+																		{
+																			"key": "id",
+																			"value": "<long>",
+																			"description": "(Required) "
+																		}
+																	]
+																},
+																"description": "Updates the details of the specified assignment."
+															},
+															"response": [
+																{
+																	"name": "Assignment updated successfully",
+																	"originalRequest": {
+																		"method": "PUT",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"dueDate\": \"<date>\",\n  \"course\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"teacher\": {\n      \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n    },\n    \"startDate\": \"<date>\",\n    \"credits\": \"<integer>\",\n    \"enrollmentLimit\": \"<integer>\",\n    \"status\": \"<string>\"\n  },\n  \"postedDate\": \"<date>\",\n  \"maxScore\": \"<integer>\",\n  \"submissionFormat\": \"<string>\"\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/api/courses/v1/:courseId/assignments/:id",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"courses",
+																				"v1",
+																				":courseId",
+																				"assignments",
+																				":id"
+																			],
+																			"variable": [
+																				{
+																					"key": "courseId"
+																				},
+																				{
+																					"key": "id"
+																				}
+																			]
+																		}
+																	},
+																	"status": "No Content",
+																	"code": 204,
+																	"_postman_previewlanguage": "text",
+																	"header": [],
+																	"cookie": [],
+																	"body": ""
+																},
+																{
+																	"name": "Assignment not found",
+																	"originalRequest": {
+																		"method": "PUT",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"dueDate\": \"<date>\",\n  \"course\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"teacher\": {\n      \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n    },\n    \"startDate\": \"<date>\",\n    \"credits\": \"<integer>\",\n    \"enrollmentLimit\": \"<integer>\",\n    \"status\": \"<string>\"\n  },\n  \"postedDate\": \"<date>\",\n  \"maxScore\": \"<integer>\",\n  \"submissionFormat\": \"<string>\"\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/api/courses/v1/:courseId/assignments/:id",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"courses",
+																				"v1",
+																				":courseId",
+																				"assignments",
+																				":id"
+																			],
+																			"variable": [
+																				{
+																					"key": "courseId"
+																				},
+																				{
+																					"key": "id"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Not Found",
+																	"code": 404,
+																	"_postman_previewlanguage": "text",
+																	"header": [],
+																	"cookie": [],
+																	"body": ""
+																}
+															]
+														},
+														{
+															"name": "Delete Assignment",
+															"request": {
+																"method": "DELETE",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/courses/v1/:courseId/assignments/:id",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"courses",
+																		"v1",
+																		":courseId",
+																		"assignments",
+																		":id"
+																	],
+																	"variable": [
+																		{
+																			"key": "courseId"
+																		},
+																		{
+																			"key": "id",
+																			"value": "<long>",
+																			"description": "(Required) "
+																		}
+																	]
+																},
+																"description": "Deletes the specified assignment."
+															},
+															"response": [
+																{
+																	"name": "Assignment deleted successfully",
+																	"originalRequest": {
+																		"method": "DELETE",
+																		"header": [],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/courses/v1/:courseId/assignments/:id",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"courses",
+																				"v1",
+																				":courseId",
+																				"assignments",
+																				":id"
+																			],
+																			"variable": [
+																				{
+																					"key": "courseId"
+																				},
+																				{
+																					"key": "id"
+																				}
+																			]
+																		}
+																	},
+																	"status": "No Content",
+																	"code": 204,
+																	"_postman_previewlanguage": "text",
+																	"header": [],
+																	"cookie": [],
+																	"body": ""
+																},
+																{
+																	"name": "Assignment not found",
+																	"originalRequest": {
+																		"method": "DELETE",
+																		"header": [],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/courses/v1/:courseId/assignments/:id",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"courses",
+																				"v1",
+																				":courseId",
+																				"assignments",
+																				":id"
+																			],
+																			"variable": [
+																				{
+																					"key": "courseId"
+																				},
+																				{
+																					"key": "id"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Not Found",
+																	"code": 404,
+																	"_postman_previewlanguage": "text",
+																	"header": [],
+																	"cookie": [],
+																	"body": ""
+																}
+															]
+														}
+													]
+												},
+												{
+													"name": "Get Assignments for Course",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/courses/v1/:courseId/assignments",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"courses",
+																"v1",
+																":courseId",
+																"assignments"
+															],
+															"variable": [
+																{
+																	"key": "courseId",
+																	"value": "<long>",
+																	"description": "(Required) "
+																}
+															]
+														},
+														"description": "Retrieves a list of assignments for the specified course."
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/courses/v1/:courseId/assignments",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"courses",
+																		"v1",
+																		":courseId",
+																		"assignments"
+																	],
+																	"variable": [
+																		{
+																			"key": "courseId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "[\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"content\": \"<string>\",\n    \"dueDate\": \"<date>\",\n    \"course\": {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    \"postedDate\": \"<date>\",\n    \"maxScore\": \"<integer>\",\n    \"submissionFormat\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"content\": \"<string>\",\n    \"dueDate\": \"<date>\",\n    \"course\": {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    \"postedDate\": \"<date>\",\n    \"maxScore\": \"<integer>\",\n    \"submissionFormat\": \"<string>\"\n  }\n]"
+														}
+													]
+												},
+												{
+													"name": "Create Assignment",
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"dueDate\": \"<date>\",\n  \"course\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"teacher\": {\n      \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n    },\n    \"startDate\": \"<date>\",\n    \"credits\": \"<integer>\",\n    \"enrollmentLimit\": \"<integer>\",\n    \"status\": \"<string>\"\n  },\n  \"postedDate\": \"<date>\",\n  \"maxScore\": \"<integer>\",\n  \"submissionFormat\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/courses/v1/:courseId/assignments",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"courses",
+																"v1",
+																":courseId",
+																"assignments"
+															],
+															"variable": [
+																{
+																	"key": "courseId",
+																	"value": "<long>",
+																	"description": "(Required) "
+																}
+															]
+														},
+														"description": "Creates a new assignment for the specified course."
+													},
+													"response": [
+														{
+															"name": "Assignment created successfully",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"dueDate\": \"<date>\",\n  \"course\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"teacher\": {\n      \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n    },\n    \"startDate\": \"<date>\",\n    \"credits\": \"<integer>\",\n    \"enrollmentLimit\": \"<integer>\",\n    \"status\": \"<string>\"\n  },\n  \"postedDate\": \"<date>\",\n  \"maxScore\": \"<integer>\",\n  \"submissionFormat\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/courses/v1/:courseId/assignments",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"courses",
+																		"v1",
+																		":courseId",
+																		"assignments"
+																	],
+																	"variable": [
+																		{
+																			"key": "courseId"
+																		}
+																	]
+																}
+															},
+															"status": "Created",
+															"code": 201,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"dueDate\": \"<date>\",\n  \"course\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"teacher\": {\n      \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n    },\n    \"startDate\": \"<date>\",\n    \"credits\": \"<integer>\",\n    \"enrollmentLimit\": \"<integer>\",\n    \"status\": \"<string>\"\n  },\n  \"postedDate\": \"<date>\",\n  \"maxScore\": \"<integer>\",\n  \"submissionFormat\": \"<string>\"\n}"
+														},
+														{
+															"name": "Course not found",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"dueDate\": \"<date>\",\n  \"course\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"teacher\": {\n      \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n    },\n    \"startDate\": \"<date>\",\n    \"credits\": \"<integer>\",\n    \"enrollmentLimit\": \"<integer>\",\n    \"status\": \"<string>\"\n  },\n  \"postedDate\": \"<date>\",\n  \"maxScore\": \"<integer>\",\n  \"submissionFormat\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/courses/v1/:courseId/assignments",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"courses",
+																		"v1",
+																		":courseId",
+																		"assignments"
+																	],
+																	"variable": [
+																		{
+																			"key": "courseId"
+																		}
+																	]
+																}
+															},
+															"status": "Not Found",
+															"code": 404,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Get All Courses",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/courses/v1?status=<string>&teacherId=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"courses",
+												"v1"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "<string>"
+												},
+												{
+													"key": "teacherId",
+													"value": "<long>"
+												}
+											]
+										},
+										"description": "Returns a list of all courses with the ability to filter by status and teacher ID."
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/courses/v1?status=<string>&teacherId=<long>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"courses",
+														"v1"
+													],
+													"query": [
+														{
+															"key": "status",
+															"value": "<string>"
+														},
+														{
+															"key": "teacherId",
+															"value": "<long>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"teacher\": {\n      \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n    },\n    \"startDate\": \"<date>\",\n    \"credits\": \"<integer>\",\n    \"enrollmentLimit\": \"<integer>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"teacher\": {\n      \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n    },\n    \"startDate\": \"<date>\",\n    \"credits\": \"<integer>\",\n    \"enrollmentLimit\": \"<integer>\",\n    \"status\": \"<string>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Create Course",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"teacher\": {\n    \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n  },\n  \"startDate\": \"<date>\",\n  \"credits\": \"<integer>\",\n  \"enrollmentLimit\": \"<integer>\",\n  \"status\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/courses/v1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"courses",
+												"v1"
+											]
+										},
+										"description": "Creates a new course."
+									},
+									"response": [
+										{
+											"name": "Course created successfully",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"teacher\": {\n    \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n  },\n  \"startDate\": \"<date>\",\n  \"credits\": \"<integer>\",\n  \"enrollmentLimit\": \"<integer>\",\n  \"status\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/courses/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"courses",
+														"v1"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"teacher\": {\n    \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n  },\n  \"startDate\": \"<date>\",\n  \"credits\": \"<integer>\",\n  \"enrollmentLimit\": \"<integer>\",\n  \"status\": \"<string>\"\n}"
+										},
+										{
+											"name": "Bad request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"teacher\": {\n    \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n  },\n  \"startDate\": \"<date>\",\n  \"credits\": \"<integer>\",\n  \"enrollmentLimit\": \"<integer>\",\n  \"status\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/courses/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"courses",
+														"v1"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "assignments",
+					"item": [
+						{
+							"name": "v1",
+							"item": [
+								{
+									"name": "{assignmentId}",
+									"item": [
+										{
+											"name": "grades",
+											"item": [
+												{
+													"name": "students",
+													"item": [
+														{
+															"name": "{studentId}",
+															"item": [
+																{
+																	"name": "courses",
+																	"item": [
+																		{
+																			"name": "{courseId}",
+																			"item": [
+																				{
+																					"name": "Get Grades for Student in Course",
+																					"request": {
+																						"method": "GET",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "*/*"
+																							}
+																						],
+																						"url": {
+																							"raw": "{{baseUrl}}/api/assignments/v1/:assignmentId/grades/students/:studentId/courses/:courseId",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"api",
+																								"assignments",
+																								"v1",
+																								":assignmentId",
+																								"grades",
+																								"students",
+																								":studentId",
+																								"courses",
+																								":courseId"
+																							],
+																							"variable": [
+																								{
+																									"key": "assignmentId"
+																								},
+																								{
+																									"key": "studentId",
+																									"value": "<long>",
+																									"description": "(Required) "
+																								},
+																								{
+																									"key": "courseId",
+																									"value": "<long>",
+																									"description": "(Required) "
+																								}
+																							]
+																						},
+																						"description": "Retrieves grades for a specific student in a specific course."
+																					},
+																					"response": [
+																						{
+																							"name": "Grades retrieved successfully",
+																							"originalRequest": {
+																								"method": "GET",
+																								"header": [
+																									{
+																										"key": "Accept",
+																										"value": "*/*"
+																									}
+																								],
+																								"url": {
+																									"raw": "{{baseUrl}}/api/assignments/v1/:assignmentId/grades/students/:studentId/courses/:courseId",
+																									"host": [
+																										"{{baseUrl}}"
+																									],
+																									"path": [
+																										"api",
+																										"assignments",
+																										"v1",
+																										":assignmentId",
+																										"grades",
+																										"students",
+																										":studentId",
+																										"courses",
+																										":courseId"
+																									],
+																									"variable": [
+																										{
+																											"key": "assignmentId"
+																										},
+																										{
+																											"key": "studentId"
+																										},
+																										{
+																											"key": "courseId"
+																										}
+																									]
+																								}
+																							},
+																							"status": "OK",
+																							"code": 200,
+																							"_postman_previewlanguage": "text",
+																							"header": [
+																								{
+																									"key": "Content-Type",
+																									"value": "*/*"
+																								}
+																							],
+																							"cookie": [],
+																							"body": "{\n  \"id\": \"<long>\",\n  \"student\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"role\": \"STUDENT\",\n    \"password\": \"<string>\",\n    \"courses\": [\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      }\n    ],\n    \"dateJoined\": \"<date>\",\n    \"lastLogin\": \"<dateTime>\",\n    \"profilePicture\": \"<string>\",\n    \"bio\": \"<string>\",\n    \"active\": \"<boolean>\"\n  },\n  \"assignment\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"content\": \"<string>\",\n    \"dueDate\": \"<date>\",\n    \"course\": {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    \"postedDate\": \"<date>\",\n    \"maxScore\": \"<integer>\",\n    \"submissionFormat\": \"<string>\"\n  },\n  \"score\": \"<integer>\",\n  \"feedback\": \"<string>\",\n  \"submissionDate\": \"<date>\"\n}"
+																						},
+																						{
+																							"name": "Student or course not found",
+																							"originalRequest": {
+																								"method": "GET",
+																								"header": [],
+																								"url": {
+																									"raw": "{{baseUrl}}/api/assignments/v1/:assignmentId/grades/students/:studentId/courses/:courseId",
+																									"host": [
+																										"{{baseUrl}}"
+																									],
+																									"path": [
+																										"api",
+																										"assignments",
+																										"v1",
+																										":assignmentId",
+																										"grades",
+																										"students",
+																										":studentId",
+																										"courses",
+																										":courseId"
+																									],
+																									"variable": [
+																										{
+																											"key": "assignmentId"
+																										},
+																										{
+																											"key": "studentId"
+																										},
+																										{
+																											"key": "courseId"
+																										}
+																									]
+																								}
+																							},
+																							"status": "Not Found",
+																							"code": 404,
+																							"_postman_previewlanguage": "text",
+																							"header": [],
+																							"cookie": [],
+																							"body": ""
+																						}
+																					]
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"name": "Get Grades for Student",
+																	"request": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "*/*"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/assignments/v1/:assignmentId/grades/students/:studentId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"assignments",
+																				"v1",
+																				":assignmentId",
+																				"grades",
+																				"students",
+																				":studentId"
+																			],
+																			"variable": [
+																				{
+																					"key": "assignmentId"
+																				},
+																				{
+																					"key": "studentId",
+																					"value": "<long>",
+																					"description": "(Required) "
+																				}
+																			]
+																		},
+																		"description": "Retrieves grades for a specific student."
+																	},
+																	"response": [
+																		{
+																			"name": "Grades retrieved successfully",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "*/*"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/api/assignments/v1/:assignmentId/grades/students/:studentId",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"api",
+																						"assignments",
+																						"v1",
+																						":assignmentId",
+																						"grades",
+																						"students",
+																						":studentId"
+																					],
+																					"variable": [
+																						{
+																							"key": "assignmentId"
+																						},
+																						{
+																							"key": "studentId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "OK",
+																			"code": 200,
+																			"_postman_previewlanguage": "text",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "*/*"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"id\": \"<long>\",\n  \"student\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"role\": \"STUDENT\",\n    \"password\": \"<string>\",\n    \"courses\": [\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      }\n    ],\n    \"dateJoined\": \"<date>\",\n    \"lastLogin\": \"<dateTime>\",\n    \"profilePicture\": \"<string>\",\n    \"bio\": \"<string>\",\n    \"active\": \"<boolean>\"\n  },\n  \"assignment\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"content\": \"<string>\",\n    \"dueDate\": \"<date>\",\n    \"course\": {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    \"postedDate\": \"<date>\",\n    \"maxScore\": \"<integer>\",\n    \"submissionFormat\": \"<string>\"\n  },\n  \"score\": \"<integer>\",\n  \"feedback\": \"<string>\",\n  \"submissionDate\": \"<date>\"\n}"
+																		},
+																		{
+																			"name": "Student not found",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [],
+																				"url": {
+																					"raw": "{{baseUrl}}/api/assignments/v1/:assignmentId/grades/students/:studentId",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"api",
+																						"assignments",
+																						"v1",
+																						":assignmentId",
+																						"grades",
+																						"students",
+																						":studentId"
+																					],
+																					"variable": [
+																						{
+																							"key": "assignmentId"
+																						},
+																						{
+																							"key": "studentId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Not Found",
+																			"code": 404,
+																			"_postman_previewlanguage": "text",
+																			"header": [],
+																			"cookie": [],
+																			"body": ""
+																		}
+																	]
+																}
+															]
+														}
+													]
+												},
+												{
+													"name": "all",
+													"item": [
+														{
+															"name": "Get All Grades",
+															"request": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/assignments/v1/:assignmentId/grades/all",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"assignments",
+																		"v1",
+																		":assignmentId",
+																		"grades",
+																		"all"
+																	],
+																	"variable": [
+																		{
+																			"key": "assignmentId"
+																		}
+																	]
+																},
+																"description": "Retrieves all grades."
+															},
+															"response": [
+																{
+																	"name": "Grades retrieved successfully",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "*/*"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/assignments/v1/:assignmentId/grades/all",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"assignments",
+																				"v1",
+																				":assignmentId",
+																				"grades",
+																				"all"
+																			],
+																			"variable": [
+																				{
+																					"key": "assignmentId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "text",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "*/*"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"id\": \"<long>\",\n  \"student\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"role\": \"STUDENT\",\n    \"password\": \"<string>\",\n    \"courses\": [\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      }\n    ],\n    \"dateJoined\": \"<date>\",\n    \"lastLogin\": \"<dateTime>\",\n    \"profilePicture\": \"<string>\",\n    \"bio\": \"<string>\",\n    \"active\": \"<boolean>\"\n  },\n  \"assignment\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"content\": \"<string>\",\n    \"dueDate\": \"<date>\",\n    \"course\": {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    \"postedDate\": \"<date>\",\n    \"maxScore\": \"<integer>\",\n    \"submissionFormat\": \"<string>\"\n  },\n  \"score\": \"<integer>\",\n  \"feedback\": \"<string>\",\n  \"submissionDate\": \"<date>\"\n}"
+																}
+															]
+														}
+													]
+												},
+												{
+													"name": "Submit Grade",
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"student\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"role\": \"STUDENT\",\n    \"password\": \"<string>\",\n    \"courses\": [\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      }\n    ],\n    \"dateJoined\": \"<date>\",\n    \"lastLogin\": \"<dateTime>\",\n    \"profilePicture\": \"<string>\",\n    \"bio\": \"<string>\",\n    \"active\": \"<boolean>\"\n  },\n  \"assignment\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"content\": \"<string>\",\n    \"dueDate\": \"<date>\",\n    \"course\": {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    \"postedDate\": \"<date>\",\n    \"maxScore\": \"<integer>\",\n    \"submissionFormat\": \"<string>\"\n  },\n  \"score\": \"<integer>\",\n  \"feedback\": \"<string>\",\n  \"submissionDate\": \"<date>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/assignments/v1/:assignmentId/grades?studentId=<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"assignments",
+																"v1",
+																":assignmentId",
+																"grades"
+															],
+															"query": [
+																{
+																	"key": "studentId",
+																	"value": "<long>",
+																	"description": "(Required) "
+																}
+															],
+															"variable": [
+																{
+																	"key": "assignmentId",
+																	"value": "<long>",
+																	"description": "(Required) "
+																}
+															]
+														},
+														"description": "Submits a grade for a specific assignment and student."
+													},
+													"response": [
+														{
+															"name": "Grade submitted successfully",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"id\": \"<long>\",\n  \"student\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"role\": \"STUDENT\",\n    \"password\": \"<string>\",\n    \"courses\": [\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      }\n    ],\n    \"dateJoined\": \"<date>\",\n    \"lastLogin\": \"<dateTime>\",\n    \"profilePicture\": \"<string>\",\n    \"bio\": \"<string>\",\n    \"active\": \"<boolean>\"\n  },\n  \"assignment\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"content\": \"<string>\",\n    \"dueDate\": \"<date>\",\n    \"course\": {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    \"postedDate\": \"<date>\",\n    \"maxScore\": \"<integer>\",\n    \"submissionFormat\": \"<string>\"\n  },\n  \"score\": \"<integer>\",\n  \"feedback\": \"<string>\",\n  \"submissionDate\": \"<date>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/assignments/v1/:assignmentId/grades?studentId=<long>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"assignments",
+																		"v1",
+																		":assignmentId",
+																		"grades"
+																	],
+																	"query": [
+																		{
+																			"key": "studentId",
+																			"value": "<long>",
+																			"description": "(Required) "
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "assignmentId"
+																		}
+																	]
+																}
+															},
+															"status": "Created",
+															"code": 201,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"id\": \"<long>\",\n  \"student\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"role\": \"STUDENT\",\n    \"password\": \"<string>\",\n    \"courses\": [\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      }\n    ],\n    \"dateJoined\": \"<date>\",\n    \"lastLogin\": \"<dateTime>\",\n    \"profilePicture\": \"<string>\",\n    \"bio\": \"<string>\",\n    \"active\": \"<boolean>\"\n  },\n  \"assignment\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"content\": \"<string>\",\n    \"dueDate\": \"<date>\",\n    \"course\": {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    \"postedDate\": \"<date>\",\n    \"maxScore\": \"<integer>\",\n    \"submissionFormat\": \"<string>\"\n  },\n  \"score\": \"<integer>\",\n  \"feedback\": \"<string>\",\n  \"submissionDate\": \"<date>\"\n}"
+														},
+														{
+															"name": "Bad request",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"id\": \"<long>\",\n  \"student\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"role\": \"STUDENT\",\n    \"password\": \"<string>\",\n    \"courses\": [\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"teacher\": {\n          \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n        },\n        \"startDate\": \"<date>\",\n        \"credits\": \"<integer>\",\n        \"enrollmentLimit\": \"<integer>\",\n        \"status\": \"<string>\"\n      }\n    ],\n    \"dateJoined\": \"<date>\",\n    \"lastLogin\": \"<dateTime>\",\n    \"profilePicture\": \"<string>\",\n    \"bio\": \"<string>\",\n    \"active\": \"<boolean>\"\n  },\n  \"assignment\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"content\": \"<string>\",\n    \"dueDate\": \"<date>\",\n    \"course\": {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"teacher\": {\n        \"value\": \"<Circular reference to #/components/schemas/UserProfile detected>\"\n      },\n      \"startDate\": \"<date>\",\n      \"credits\": \"<integer>\",\n      \"enrollmentLimit\": \"<integer>\",\n      \"status\": \"<string>\"\n    },\n    \"postedDate\": \"<date>\",\n    \"maxScore\": \"<integer>\",\n    \"submissionFormat\": \"<string>\"\n  },\n  \"score\": \"<integer>\",\n  \"feedback\": \"<string>\",\n  \"submissionDate\": \"<date>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/assignments/v1/:assignmentId/grades?studentId=<long>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"assignments",
+																		"v1",
+																		":assignmentId",
+																		"grades"
+																	],
+																	"query": [
+																		{
+																			"key": "studentId",
+																			"value": "<long>",
+																			"description": "(Required) "
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "assignmentId"
+																		}
+																	]
+																}
+															},
+															"status": "Bad Request",
+															"code": 400,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "signin",
+							"item": [
+								{
+									"name": "authenticate User",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/v1/signin",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"v1",
+												"signin"
+											]
+										},
+										"description": "Signin syte"
+									},
+									"response": [
+										{
+											"name": "Signin : succefuly.",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/auth/v1/signin",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														"v1",
+														"signin"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"accessToken\": \"<string>\",\n  \"refreshToken\": \"<string>\"\n}"
+										},
+										{
+											"name": "Signin : BindingResult error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/auth/v1/signin",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														"v1",
+														"signin"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										},
+										{
+											"name": "Signin : Bad email or password.",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/auth/v1/signin",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														"v1",
+														"signin"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "resetPassword",
+							"item": [
+								{
+									"name": "{email}",
+									"item": [
+										{
+											"name": "send Message Forward Password",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/auth/v1/resetPassword/:email",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														"v1",
+														"resetPassword",
+														":email"
+													],
+													"variable": [
+														{
+															"key": "email",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Send Link for reset password "
+											},
+											"response": [
+												{
+													"name": "Aend link to mail successfully",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/auth/v1/resetPassword/:email",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"auth",
+																"v1",
+																"resetPassword",
+																":email"
+															],
+															"variable": [
+																{
+																	"key": "email"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"message\": \"<string>\"\n}"
+												},
+												{
+													"name": "User Not Found",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/auth/v1/resetPassword/:email",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"auth",
+																"v1",
+																"resetPassword",
+																":email"
+															],
+															"variable": [
+																{
+																	"key": "email"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"message\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "forward Password",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"newPassword\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/v1/resetPassword",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"v1",
+												"resetPassword"
+											]
+										},
+										"description": "Forward password"
+									},
+									"response": [
+										{
+											"name": "Change password successfully",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"newPassword\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/auth/v1/resetPassword",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														"v1",
+														"resetPassword"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										},
+										{
+											"name": "Token is damaged",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"newPassword\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/auth/v1/resetPassword",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														"v1",
+														"resetPassword"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										},
+										{
+											"name": "User not found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"newPassword\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/auth/v1/resetPassword",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														"v1",
+														"resetPassword"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "registration",
+							"item": [
+								{
+									"name": "registration",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"password\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/v1/registration",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"v1",
+												"registration"
+											]
+										},
+										"description": "Link from email"
+									},
+									"response": [
+										{
+											"name": "Registration succesfuly ",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\",\n  \"password\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/auth/v1/registration",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														"v1",
+														"registration"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										},
+										{
+											"name": "email want to registre again ",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\",\n  \"password\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/auth/v1/registration",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														"v1",
+														"registration"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "registerEmail",
+							"item": [
+								{
+									"name": "{email}",
+									"item": [
+										{
+											"name": "register Email",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/auth/v1/registerEmail/:email",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														"v1",
+														"registerEmail",
+														":email"
+													],
+													"variable": [
+														{
+															"key": "email",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Send activation link for input user information"
+											},
+											"response": [
+												{
+													"name": "Send message to any email,not chack email",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/auth/v1/registerEmail/:email",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"auth",
+																"v1",
+																"registerEmail",
+																":email"
+															],
+															"variable": [
+																{
+																	"key": "email"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"message\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "auth",
+							"item": [
+								{
+									"name": "token",
+									"item": [
+										{
+											"name": "refresh",
+											"item": [
+												{
+													"name": "{refreshToken}",
+													"item": [
+														{
+															"name": "Refresh Access Token",
+															"request": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/auth/v1/auth/token/refresh/:refreshToken",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"auth",
+																		"v1",
+																		"auth",
+																		"token",
+																		"refresh",
+																		":refreshToken"
+																	],
+																	"variable": [
+																		{
+																			"key": "refreshToken",
+																			"value": "<string>",
+																			"description": "(Required) "
+																		}
+																	]
+																},
+																"description": "Refreshes the access token using a refresh token."
+															},
+															"response": [
+																{
+																	"name": "Token refreshed successfully",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "*/*"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/auth/v1/auth/token/refresh/:refreshToken",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"auth",
+																				"v1",
+																				"auth",
+																				"token",
+																				"refresh",
+																				":refreshToken"
+																			],
+																			"variable": [
+																				{
+																					"key": "refreshToken"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "text",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "*/*"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"accessToken\": \"<string>\",\n  \"refreshToken\": \"<string>\"\n}"
+																},
+																{
+																	"name": "Invalid refresh token",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "*/*"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/auth/v1/auth/token/refresh/:refreshToken",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"auth",
+																				"v1",
+																				"auth",
+																				"token",
+																				"refresh",
+																				":refreshToken"
+																			],
+																			"variable": [
+																				{
+																					"key": "refreshToken"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Bad Request",
+																	"code": 400,
+																	"_postman_previewlanguage": "text",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "*/*"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"message\": \"<string>\"\n}"
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "test",
+			"item": [
+				{
+					"name": "hello",
+					"item": [
+						{
+							"name": "happy server is working",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/test/hello",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"test",
+										"hello"
+									]
+								},
+								"description": "This endpoint for test is enable server."
+							},
+							"response": [
+								{
+									"name": "Server enabled successfully",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/test/hello",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"test",
+												"hello"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
